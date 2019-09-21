@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { Link } from "../Link";
 import { Error } from "../Error";
 import { Loader } from "../Loader";
+import { Overlay } from "../Overlay";
 import { QuestionQuery, QuestionQueryVariables } from "../../types/QuestionQuery";
 
 const H1 = styled.h1`
@@ -62,6 +63,8 @@ export const Question: React.FC<Props> = ({ id }) => {
   return (
     <>
       <Loader key={id} percentage={100} />
+
+      <Overlay>{question.body}</Overlay>
 
       <H1>{question.body}</H1>
 
