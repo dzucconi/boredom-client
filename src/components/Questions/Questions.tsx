@@ -9,7 +9,7 @@ import { QuestionsQuery } from "../../types/QuestionsQuery";
 
 export const QUESTIONS_QUERY = gql`
   query QuestionsQuery {
-    questions {
+    questions(sortBy: CREATED_AT_DESC) {
       body
       id: slug
     }
