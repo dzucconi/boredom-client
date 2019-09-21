@@ -20,7 +20,7 @@ export const Questions: React.FC = () => {
   const { data, loading, error } = useQuery<QuestionsQuery>(QUESTIONS_QUERY);
 
   if (loading) {
-    return <Loader percentage={1} />;
+    return <Loader percentage={0} />;
   }
 
   if (error) {

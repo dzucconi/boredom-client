@@ -50,8 +50,8 @@ export const Question: React.FC<Props> = ({ id }) => {
     { variables: { id, limit: LIMIT } }
   );
 
-  if (loading || !data) {
-    return <Loader key={id} percentage={1} />;
+  if (loading) {
+    return <Loader key={id} percentage={0} />;
   }
 
   if (error) {
