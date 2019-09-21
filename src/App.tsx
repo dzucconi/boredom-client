@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { ApolloProvider } from "@apollo/react-hooks";
 
-const App: React.FC = () => {
+import { client } from "./lib/apollo";
+
+import { Questions } from "./components/Questions";
+import { Question } from "./components/Question";
+
+export const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <Route exact path="/" component={Questions} />
+        <Route
+          exact
+          path="/:id"
+          component={({
+            match: {
+              params: { id }
+            }
+          }: {
+            match: { params: { id: string } };
+          }) => <Question id={id} />}
+        />
+      </Router>
+    </ApolloProvider>
   );
-}
-
-export default App;
+};
