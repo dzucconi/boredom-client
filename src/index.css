@@ -29,6 +29,10 @@ body {
   html {
     font-size: 32px;
   }
+
+  body {
+    margin: 1em 0.75em;
+  }
 }
 
 @media (max-width: 600px) {
