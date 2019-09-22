@@ -7,17 +7,23 @@ import { Error } from "../Error";
 import { Loader } from "../Loader";
 import { QuestionsQuery } from "../../types/QuestionsQuery";
 
+interface Props {
+  sortBy?: "RANDOM" | "CREATED_AT_DESC";
+}
+
 export const QUESTIONS_QUERY = gql`
-  query QuestionsQuery {
-    questions(sortBy: CREATED_AT_DESC) {
+  query QuestionsQuery($sortBy: Sort) {
+    questions(sortBy: $sortBy) {
       body
       id: slug
     }
   }
 `;
 
-export const Questions: React.FC = () => {
-  const { data, loading, error } = useQuery<QuestionsQuery>(QUESTIONS_QUERY);
+export const Questions: React.FC<Props> = ({ sortBy = "RANDOM" }) => {
+  const { data, loading, error } = useQuery<QuestionsQuery>(QUESTIONS_QUERY, {
+    variables: { sortBy }
+  });
 
   if (loading) {
     return <Loader percentage={0} />;
