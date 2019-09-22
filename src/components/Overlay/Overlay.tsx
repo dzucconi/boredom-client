@@ -1,12 +1,26 @@
 import styled, { keyframes } from "styled-components";
 
+interface Props {
+  children: string;
+}
+
 const fadeOut = keyframes`
   100% {
     opacity: 0;
   }
 `;
 
-export const Overlay = styled.div`
+const SPEED = 300.0;
+const WHITESPACE = /\W+/g;
+
+const estimate = (input: string) => {
+  const words = input.split(WHITESPACE).length;
+  return (words / SPEED) * 60.0 * 1000.0;
+};
+
+export const Overlay = styled.div.attrs((props: Props) => ({
+  style: { animationDelay: `${estimate(props.children)}ms` }
+}))<Props>`
   position: fixed;
   top: 0;
   right: 0;
@@ -23,7 +37,6 @@ export const Overlay = styled.div`
   background-color: black;
   animation: ${fadeOut} 1s ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 2s;
   transform: translate3d(0, 0, 0);
   pointer-events: none;
   touch-action: none;
