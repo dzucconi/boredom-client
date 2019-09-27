@@ -12,12 +12,16 @@ import { Question } from "./components/Question";
 
 const Container = styled.div``;
 
-export const App: React.FC = () => {
+interface Props {
+  autoPlay: boolean;
+}
+
+export const App: React.FC<Props> = ({ autoPlay = false }) => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   return (
     <>
-      <Agent surface={ref} />
+      {autoPlay && <Agent surface={ref} />}
 
       <Container ref={ref}>
         <ApolloProvider client={client}>

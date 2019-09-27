@@ -74,7 +74,11 @@ export const Question: React.FC<Props> = ({ id }) => {
       <H1>{question.body}</H1>
 
       {questions.map(question => (
-        <Link key={question.id} to={`/${question.id}`} data-crawled={question.isCrawled}>
+        <Link
+          key={question.id}
+          to={`/${question.id}${window.location.search}`}
+          data-crawled={question.isCrawled}
+        >
           {question.body}
         </Link>
       ))}
