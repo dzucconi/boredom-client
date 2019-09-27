@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "3.1.1",
-    "@rooks/use-mutation-observer": "^3.3.0",
+    "@rooks/use-mutation-observer": "3.3.0",
     "apollo-boost": "0.4.4",
     "graphql": "14.5.8",
     "qs": "6.9.0",
@@ -13,7 +13,7 @@
     "react-dom": "16.10.0",
     "react-router-dom": "5.1.0",
     "react-scripts": "3.1.2",
-    "smoothscroll-polyfill": "^0.4.4",
+    "smoothscroll-polyfill": "0.4.4",
     "styled-components": "4.4.0",
     "typescript": "3.6.3"
   },
@@ -47,7 +47,7 @@
     "@types/react": "16.9.3",
     "@types/react-dom": "16.9.1",
     "@types/react-router-dom": "5.1.0",
-    "@types/smoothscroll-polyfill": "^0.3.1",
+    "@types/smoothscroll-polyfill": "0.3.1",
     "@types/styled-components": "4.1.19",
     "apollo": "2.18.3"
   }
