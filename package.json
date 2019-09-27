@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "3.1.1",
+    "@rooks/use-mutation-observer": "^3.3.0",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.8",
     "@types/qs": "6.5.3",
