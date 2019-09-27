@@ -3,6 +3,7 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import styled from "styled-components";
 
+import { shuffle } from "../../lib/shuffle";
 import { Link } from "../Link";
 import { Error } from "../Error";
 import { Loader } from "../Loader";
@@ -60,6 +61,10 @@ export const Question: React.FC<Props> = ({ id }) => {
 
   const { question, backfill } = data!;
 
+  const questions = shuffle(
+    [...question.related, ...backfill].filter(q => q.id !== question.id)
+  ).slice(0, LIMIT);
+
   return (
     <>
       <Loader key={id} percentage={100} />
@@ -68,7 +73,7 @@ export const Question: React.FC<Props> = ({ id }) => {
 
       <H1>{question.body}</H1>
 
-      {[...question.related, ...backfill].slice(0, LIMIT).map(question => (
+      {questions.map(question => (
         <Link key={question.id} to={`/${question.id}`} data-crawled={question.isCrawled}>
           {question.body}
         </Link>
