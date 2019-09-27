@@ -40,7 +40,7 @@ export const Questions: React.FC<Props> = ({ sortBy = "RANDOM" }) => {
       <Loader percentage={100} />
 
       {questions.map(question => (
-        <Link key={question.id} to={`/${question.id}`}>
+        <Link key={question.id} to={`/${question.id}${window.location.search}`}>
           {question.body}
         </Link>
       ))}

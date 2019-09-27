@@ -1,9 +1,5 @@
 import { Link as InternalLink } from "react-router-dom";
-import styled, { css } from "styled-components";
-
-const hoverMixin = css`
-  color: gray;
-`;
+import styled from "styled-components";
 
 export const Link = styled(InternalLink)`
   display: block;
@@ -12,8 +8,8 @@ export const Link = styled(InternalLink)`
   text-decoration: none;
   transition: color 200ms;
 
-  ${({ hover = false }: { hover?: boolean }) => hover && hoverMixin}
-  &:hover {
-    ${hoverMixin}
+  &:hover,
+  &[data-state="hover"] {
+    color: gray;
   }
 `;
