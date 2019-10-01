@@ -4,6 +4,7 @@ import { createGlobalStyle } from "styled-components";
 
 import { Pointer } from "./Pointer";
 import { wait, sample, move, transformTo, area, Point } from "./utils";
+import { audio } from "../audio";
 
 interface Props {
   surface: React.RefObject<HTMLDivElement>;
@@ -50,6 +51,7 @@ export const Agent: React.FC<Props> = ({ surface }) => {
       setIsClicked(true);
       await wait(250);
       link.click();
+      audio.tock.play();
       setIsClicked(false);
     } else {
       setPrevLinksLength(links.length);
