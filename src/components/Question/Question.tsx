@@ -51,6 +51,12 @@ export const Question: React.FC<Props> = ({ id }) => {
     { variables: { id, limit: LIMIT } }
   );
 
+  React.useEffect(() => {
+    if (data && data.question) {
+      document.title = data.question.body;
+    }
+  }, [data]);
+
   if (loading) {
     return <Loader key={id} percentage={0} />;
   }

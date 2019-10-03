@@ -15,12 +15,20 @@ export const sample = <T>(xs: T[]): T => xs[Math.floor(Math.random() * xs.length
 export const rand = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min) + min);
 
+export const range = (min: number, max: number) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
+
 export const move = (): Point => ({
   x: rand(0, window.innerWidth),
   y: rand(0, window.innerHeight)
 });
 
 export const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+export const fuzzyWait = (min: number, max: number) => {
+  const ms = range(min, max);
+  return wait(ms);
+};
 
 export const between = (min: number, p: number, max: number) =>
   (min < max && (p > min && p < max)) ||

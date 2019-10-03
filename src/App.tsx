@@ -20,34 +20,32 @@ export const App: React.FC<Props> = ({ autoPlay = false }) => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   return (
-    <>
+    <Router>
       {autoPlay && <Agent surface={ref} />}
 
       <Container ref={ref}>
         <ApolloProvider client={client}>
-          <Router>
-            <Route
-              exact
-              path="/"
-              component={({ location }: { location: Location }) => {
-                const { sortBy } = qs.parse(location.search.slice(1));
-                return <Questions sortBy={sortBy} />;
-              }}
-            />
-            <Route
-              exact
-              path="/:id"
-              component={({
-                match: {
-                  params: { id }
-                }
-              }: {
-                match: { params: { id: string } };
-              }) => <Question id={id} />}
-            />
-          </Router>
+          <Route
+            exact
+            path="/"
+            component={({ location }: { location: Location }) => {
+              const { sortBy } = qs.parse(location.search.slice(1));
+              return <Questions sortBy={sortBy} />;
+            }}
+          />
+          <Route
+            exact
+            path="/:id"
+            component={({
+              match: {
+                params: { id }
+              }
+            }: {
+              match: { params: { id: string } };
+            }) => <Question id={id} />}
+          />
         </ApolloProvider>
       </Container>
-    </>
+    </Router>
   );
 };
