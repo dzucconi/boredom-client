@@ -9,7 +9,7 @@ export const Pointer = styled.div`
   background-color: white;
   border-radius: 50%;
   z-index: 1;
-  transition: transform 1s;
+  transition: transform 1s, background-color 200ms;
 
   ${({ isClicked }: { isClicked?: boolean }) =>
     isClicked &&

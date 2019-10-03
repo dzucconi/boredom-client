@@ -9,7 +9,7 @@ export const Link = styled(InternalLink)`
   transition: color 200ms;
 
   &:hover,
-  &[data-state="hover"] {
+  &[data-state="clicked"] {
     color: gray;
   }
 `;

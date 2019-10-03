@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { estimate } from "../../lib/estimate";
 
 interface Props {
   children: string;
@@ -9,14 +10,6 @@ const fadeOut = keyframes`
     opacity: 0;
   }
 `;
-
-const SPEED = 300.0;
-const WHITESPACE = /\W+/g;
-
-const estimate = (input: string) => {
-  const words = input.split(WHITESPACE).length;
-  return (words / SPEED) * 60.0 * 1000.0;
-};
 
 export const Overlay = styled.div.attrs((props: Props) => ({
   style: { animationDelay: `${estimate(props.children)}ms` }
