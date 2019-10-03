@@ -112,8 +112,8 @@ export const Agent: React.FC<Props> = ({ surface }) => {
       await fuzzyWait(200, 400);
 
       // Actually click the link, triggering the route
-      link.click();
       dispatch({ type: "STOP" });
+      link.click();
     }
   });
 
