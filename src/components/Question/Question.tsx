@@ -2,13 +2,16 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import styled from "styled-components";
+import { Redirect } from "react-router-dom";
 
 import { shuffle } from "../../lib/shuffle";
 import { Link } from "../Link";
-import { Error } from "../Error";
 import { Loader } from "../Loader";
 import { Overlay } from "../Overlay";
-import { QuestionQuery, QuestionQueryVariables } from "../../types/QuestionQuery";
+import {
+  QuestionQuery,
+  QuestionQueryVariables
+} from "../../types/QuestionQuery";
 
 const H1 = styled.h1`
   margin: 1em 0;
@@ -46,10 +49,10 @@ interface Props {
   id: string;
 }
 export const Question: React.FC<Props> = ({ id }) => {
-  const { data, loading, error } = useQuery<QuestionQuery, QuestionQueryVariables>(
-    QUESTION_QUERY,
-    { variables: { id, limit: LIMIT } }
-  );
+  const { data, loading, error } = useQuery<
+    QuestionQuery,
+    QuestionQueryVariables
+  >(QUESTION_QUERY, { variables: { id, limit: LIMIT } });
 
   React.useEffect(() => {
     if (data && data.question) {
@@ -62,7 +65,7 @@ export const Question: React.FC<Props> = ({ id }) => {
   }
 
   if (error) {
-    return <Error>{error.message}</Error>;
+    return <Redirect to={`/${window.location.search}`} />;
   }
 
   const { question, backfill } = data!;
