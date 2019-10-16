@@ -6,7 +6,7 @@
     "@apollo/react-hooks": "3.1.3",
     "@rooks/use-mutation-observer": "3.4.0",
     "apollo-boost": "0.4.4",
-    "audiate": "1.0.3",
+    "audiate": "1.1.0",
     "graphql": "14.5.8",
     "qs": "6.9.0",
     "queryparams": "0.1.0",
