@@ -1,6 +1,5 @@
 import React from "react";
 import useMutationObserver from "@rooks/use-mutation-observer";
-import { createGlobalStyle } from "styled-components";
 
 import { Pointer } from "./Pointer";
 import {
@@ -18,13 +17,6 @@ import { estimate } from "../lib/estimate";
 interface Props {
   surface: React.RefObject<HTMLDivElement>;
 }
-
-const DisableMouse = createGlobalStyle`
-  html {
-    pointer-events: none;
-    cursor: none;
-  }
-`;
 
 // TODO: Also randomly scroll?
 const idle = (ms: number, fn = () => {}) =>
@@ -117,10 +109,5 @@ export const Agent: React.FC<Props> = ({ surface }) => {
     }
   });
 
-  return (
-    <>
-      <DisableMouse />
-      <Pointer style={transformTo(state.point)} isClicked={state.clicked} />
-    </>
-  );
+  return <Pointer style={transformTo(state.point)} isClicked={state.clicked} />;
 };
