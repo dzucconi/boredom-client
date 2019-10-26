@@ -14,6 +14,7 @@ import { client } from "./lib/apollo";
 import { Agent } from "./Agent";
 import { Questions } from "./components/Questions";
 import { Question } from "./components/Question";
+import { Fullscreener } from "./components/Fullscreener";
 
 const Container = styled.div``;
 
@@ -26,7 +27,12 @@ export const App: React.FC<Props> = ({ autoPlay = false }) => {
 
   return (
     <Router>
-      {autoPlay && <Agent surface={ref} />}
+      {autoPlay && (
+        <>
+          <Agent surface={ref} />
+          <Fullscreener />
+        </>
+      )}
 
       <Container ref={ref}>
         <ApolloProvider client={client}>
