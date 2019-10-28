@@ -8,7 +8,7 @@
     "apollo-boost": "0.4.4",
     "audiate": "2.0.0",
     "graphql": "14.5.8",
-    "howler": "^2.1.2",
+    "howler": "2.1.2",
     "qs": "6.9.0",
     "queryparams": "0.1.0",
     "react": "16.11.0",
@@ -44,7 +44,7 @@
     ]
   },
   "devDependencies": {
-    "@types/howler": "^2.1.1",
+    "@types/howler": "2.1.1",
     "@types/jest": "24.0.20",
     "@types/node": "12.11.7",
     "@types/qs": "6.5.3",
