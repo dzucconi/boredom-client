@@ -29,6 +29,7 @@ const idle = (ms: number, fn = () => {}) =>
       fn();
       await fuzzyWait(100, 4000);
     }
+
     if (Math.random() > 0.5) {
       fn();
       await fuzzyWait(100, 4000);
