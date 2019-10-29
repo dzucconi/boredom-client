@@ -13,6 +13,7 @@ import {
 } from "./utils";
 import { audio } from "../audio";
 import { estimate } from "../lib/estimate";
+import { FADE_SPEED } from "../components/Overlay";
 
 interface Props {
   surface: React.RefObject<HTMLDivElement>;
@@ -83,6 +84,8 @@ export const Agent: React.FC<Props> = ({ surface }) => {
       await idle(estimate(document.title), () =>
         dispatch({ type: "MOVE", payload: { point: move() } })
       );
+
+      await wait(FADE_SPEED);
 
       // Scroll to target link
       window.scroll({

@@ -3,6 +3,8 @@ import styled, { keyframes } from "styled-components";
 import { speed } from "../../config";
 import { estimate } from "../../lib/estimate";
 
+export const FADE_SPEED = 1000;
+
 interface Props {
   children: string;
 }
@@ -30,7 +32,7 @@ export const Overlay = styled.div.attrs((props: Props) => ({
   user-select: none;
   color: gold;
   background-color: black;
-  animation: ${fadeOut} ${1000 * speed}ms ease-out;
+  animation: ${fadeOut} ${FADE_SPEED * speed}ms ease-out;
   animation-fill-mode: forwards;
   transform: translate3d(0, 0, 0);
   pointer-events: none;
