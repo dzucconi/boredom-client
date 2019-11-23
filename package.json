@@ -48,7 +48,7 @@
     "@types/jest": "24.0.23",
     "@types/node": "12.12.12",
     "@types/qs": "6.9.0",
-    "@types/react": "16.9.12",
+    "@types/react": "16.9.13",
     "@types/react-dom": "16.9.4",
     "@types/react-router-dom": "5.1.2",
     "@types/smoothscroll-polyfill": "0.3.1",
