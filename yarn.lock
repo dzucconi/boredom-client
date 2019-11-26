@@ -1248,10 +1248,10 @@
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.4.tgz#b740f68609dfae8aa71c3a6cab15d816407ba493"
   integrity sha512-60CHpq+eqnTxLZQ4PGHYNwUX572hgpMHGPtTWMjdTMsAvlm69lZV/4ly6O3sAYkomo4NggGcomrDpBe34rxUqw==
 
-"@rooks/use-mutation-observer@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@rooks/use-mutation-observer/-/use-mutation-observer-3.4.0.tgz#5e4c122401ae1f790a24c64763a2910d0199a909"
-  integrity sha512-q10+v3WbvSt5fj55VMikTPaUZ9Yl+IYDsymodWr2+cKx0PD97VBeWYjk3xHJPqJgejBHwnrwiNkJKGFY5iW+WQ==
+"@rooks/use-mutation-observer@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@rooks/use-mutation-observer/-/use-mutation-observer-3.4.1.tgz#130eba1258377f792af5b893f142f8914b65c36c"
+  integrity sha512-vb+pxBvyqP4/zm+ZMxpoPMaJuFR+odYXc4UPT65HRAofgYQHvBxucKD71UNfWR3BGrVWJv7xd6io+e4rjR/foA==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
