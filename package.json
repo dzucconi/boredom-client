@@ -46,7 +46,7 @@
   "devDependencies": {
     "@types/howler": "2.1.2",
     "@types/jest": "24.9.1",
-    "@types/node": "12.12.25",
+    "@types/node": "12.12.26",
     "@types/qs": "6.9.0",
     "@types/react": "16.9.19",
     "@types/react-dom": "16.9.5",
