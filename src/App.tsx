@@ -5,7 +5,7 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 import { ApolloProvider } from "@apollo/react-hooks";
 
@@ -15,6 +15,7 @@ import { Agent } from "./Agent";
 import { Questions } from "./components/Questions";
 import { Question } from "./components/Question";
 import { Fullscreener } from "./components/Fullscreener";
+import { DisableInteraction } from "./components/DisableInteraction";
 
 const Container = styled.div``;
 
@@ -31,6 +32,7 @@ export const App: React.FC<Props> = ({ autoPlay = false }) => {
         <>
           <Agent surface={ref} />
           <Fullscreener />
+          <DisableInteraction />
         </>
       )}
 
@@ -50,8 +52,8 @@ export const App: React.FC<Props> = ({ autoPlay = false }) => {
               path="/:id"
               component={({
                 match: {
-                  params: { id }
-                }
+                  params: { id },
+                },
               }: {
                 match: { params: { id: string } };
               }) => <Question id={id} />}
