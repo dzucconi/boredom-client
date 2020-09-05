@@ -75,7 +75,7 @@ export const Question: React.FC<Props> = ({ id }) => {
   ).slice(0, LIMIT);
 
   return (
-    <React.Fragment key={id}>
+    <>
       <Loader key={id} percentage={100} />
 
       <Overlay>{question.body}</Overlay>
@@ -91,6 +91,6 @@ export const Question: React.FC<Props> = ({ id }) => {
           {question.body}
         </Link>
       ))}
-    </React.Fragment>
+    </>
   );
 };
