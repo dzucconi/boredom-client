@@ -16,7 +16,7 @@ const fadeOut = keyframes`
 `;
 
 export const Overlay = styled.div.attrs((props: Props) => ({
-  style: { animationDelay: `${estimate(props.children)}ms` }
+  style: { animationDelay: `${estimate(props.children)}ms` },
 }))<Props>`
   position: fixed;
   top: 0;
@@ -34,7 +34,6 @@ export const Overlay = styled.div.attrs((props: Props) => ({
   background-color: black;
   animation: ${fadeOut} ${FADE_SPEED * speed}ms ease-out;
   animation-fill-mode: forwards;
-  transform: translate3d(0, 0, 0);
   pointer-events: none;
   touch-action: none;
 `;
