@@ -10,7 +10,7 @@ import { Loader } from "../Loader";
 import { Overlay } from "../Overlay";
 import {
   QuestionQuery,
-  QuestionQueryVariables
+  QuestionQueryVariables,
 } from "../../types/QuestionQuery";
 
 const H1 = styled.h1`
@@ -71,18 +71,18 @@ export const Question: React.FC<Props> = ({ id }) => {
   const { question, backfill } = data!;
 
   const questions = shuffle(
-    [...question.related, ...backfill].filter(q => q.id !== question.id)
+    [...question.related, ...backfill].filter((q) => q.id !== question.id)
   ).slice(0, LIMIT);
 
   return (
-    <>
+    <React.Fragment key={id}>
       <Loader key={id} percentage={100} />
 
       <Overlay>{question.body}</Overlay>
 
       <H1>{question.body}</H1>
 
-      {questions.map(question => (
+      {questions.map((question) => (
         <Link
           key={question.id}
           to={`/${question.id}${window.location.search}`}
@@ -91,6 +91,6 @@ export const Question: React.FC<Props> = ({ id }) => {
           {question.body}
         </Link>
       ))}
-    </>
+    </React.Fragment>
   );
 };
