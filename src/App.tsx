@@ -16,6 +16,7 @@ import { Questions } from "./components/Questions";
 import { Question } from "./components/Question";
 import { Fullscreener } from "./components/Fullscreener";
 import { DisableInteraction } from "./components/DisableInteraction";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 const Container = styled.div``;
 
@@ -28,6 +29,8 @@ export const App: React.FC<Props> = ({ autoPlay = false }) => {
 
   return (
     <Router>
+      <ScrollToTop />
+
       {autoPlay && (
         <>
           <Agent surface={ref} />
