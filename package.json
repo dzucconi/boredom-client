@@ -53,6 +53,6 @@
     "@types/react-router-dom": "5.1.6",
     "@types/smoothscroll-polyfill": "0.3.1",
     "@types/styled-components": "5.1.4",
-    "apollo": "2.31.0"
+    "apollo": "2.31.1"
   }
 }
